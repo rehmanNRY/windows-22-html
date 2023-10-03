@@ -1,0 +1,2443 @@
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+/* Pre-Loader */
+.loaderx{
+    position: fixed;
+    z-index: 999999999999999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  transition: .2s all ease;
+  color: #fff;
+  font-family: Open Sans;
+  background-image: url(../images/bg2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.wrapperx{
+    height: 100vh;
+    width: 100vw;
+    -webkit-backdrop-filter: blur(90px);
+    backdrop-filter: blur(90px);
+    position: absolute;
+    position: fixed;
+    z-index: 999999999999999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  color: #fff;
+  font-family: Open Sans;
+    background-color: rgba(0,0,0,.1);
+}
+.loaderx.hidden {
+    display: none;
+}
+.loader {
+    position: relative;
+    width: 50px;
+    margin-top: 16vh;
+    height: 50px;
+    border-radius: 50%;
+    animation: 4500ms linear 0s normal none infinite running;
+    animation-name: rotate;
+    left: 69px;
+}
+.loaderx img{
+    height: 23vh;
+    width: 23vh;
+    margin-top: -8vh;
+}
+.loader span::after {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #e9e9e9;
+    content: "";
+    display: block;
+    transform-origin: 25px 25px;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}  
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+.pip-0::after {
+    transform: rotate(0deg);
+    animation-name: rotate-0;
+    animation-delay: 700ms;
+}  
+@keyframes rotate-0 {
+    0%, 20% {
+      transform: rotate(0deg);
+    }
+    40%, 60% {
+      transform: rotate(180deg);
+    }
+    80%, 100% {
+      transform: rotate(360deg);
+    }
+  }
+.pip-1::after {
+    transform: rotate(20deg);
+    animation-name: rotate-1;
+    animation-delay: 575ms;
+}  
+@keyframes rotate-1 {
+    0%, 20% {
+      transform: rotate(20deg);
+    }
+    40%, 60% {
+      transform: rotate(200deg);
+    }
+    80%, 100% {
+      transform: rotate(380deg);
+    }
+}
+.pip-2::after {
+    transform: rotate(40deg);
+    animation-name: rotate-2;
+    animation-delay: 450ms;
+}  
+@keyframes rotate-2 {
+    0%, 20% {
+      transform: rotate(40deg);
+    }
+    40%, 60% {
+      transform: rotate(220deg);
+    }
+    80%, 100% {
+      transform: rotate(400deg);
+    }
+}
+.pip-3::after {
+    transform: rotate(60deg);
+    animation-name: rotate-3;
+    animation-delay: 325ms;
+}  
+@keyframes rotate-3 {
+    0%, 20% {
+      transform: rotate(60deg);
+    }
+    40%, 60% {
+      transform: rotate(240deg);
+    }
+    80%, 100% {
+      transform: rotate(420deg);
+    }
+}
+.pip-4::after {
+    transform: rotate(80deg);
+    animation-name: rotate-4;
+    animation-delay: 200ms;
+}
+@keyframes rotate-4 {
+    0%, 20% {
+      transform: rotate(80deg);
+    }
+    40%, 60% {
+      transform: rotate(260deg);
+    }
+    80%, 100% {
+      transform: rotate(440deg);
+    }
+}
+.pip-5::after {
+    transform: rotate(100deg);
+    animation-name: rotate-5;
+    animation-delay: 75ms;
+}
+@keyframes rotate-5 {
+    0%, 20% {
+      transform: rotate(100deg);
+    }
+    40%, 60% {
+      transform: rotate(280deg);
+    }
+    80%, 100% {
+      transform: rotate(460deg);
+    }
+}
+@keyframes opacity {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+}
+/* Windows Login */
+.windows_login{
+    height: 100vh;
+    width: 100%;
+    background-image: url(../images/bg2.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 9;
+}
+.windows_login.active{
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+.login_user{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    padding-top: 21vh;
+    height: 100%;
+    color: #edf2f7;
+    font-weight: 700;
+    font-size: 25px;
+}
+.login_user:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    -webkit-backdrop-filter: blur(25px);
+    -moz-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    background: rgba(0,0,0,.1);
+}
+.user-profile{
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-bottom: 1.2vh;
+    background-image: url(../icons/logo.png);
+    background-position: center;
+    background-size: cover;
+}
+.windows_login .login_user button{
+    height: 33px;
+    border-radius: 2px;
+    border: none;
+    width: 114px;
+    font-weight: 100;
+    margin-top: 1.5vh;
+    cursor: pointer;
+    background: hsla(0,0%,100%,.2);
+    font-size: 13px;
+    letter-spacing: .5px;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 4px;
+}
+.windows_login .login_user button:hover{
+    border: 2px solid #fff;
+}
+::-webkit-scrollbar {
+    width: 3px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: none;
+}
+::-webkit-scrollbar-thumb {
+    outline: none;
+    background: #919191;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+html,body,h1,h2,h3,h4,h5,h6,div,img{
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+}
+ul {
+    list-style: none;
+}
+.d-flex {
+    display: flex;
+}
+.items-center {
+    align-items: center;
+}
+.items-start {
+    align-items: flex-start;
+}
+.items-end {
+    align-items: flex-end;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.justify-start {
+    justify-content: flex-start;
+}
+.flex-none {
+    flex: none;
+}
+.flex-1 {
+    flex: 1;
+}
+.flex-auto {
+    flex: auto;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.hidden-folder img {
+    opacity: 0.6;
+}
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+/* Taskbar Settings */
+.taskbar_settings{
+    height: 100%;
+    width: 100%;
+    height: calc(100% - 40px);
+    display: none;
+    position: absolute;
+    z-index: 99;
+    background-color: #fff;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.taskbar_settings.active{
+    display: block;
+}
+.taskbar-settings-active .taskbar-icon-taskbar{
+    background-color: #fff;
+}
+.taskbar-settings-active .taskbar-icon-taskbar:before{
+    content: '';
+    position: absolute;
+    width: 86%;
+    height: 3px;
+    background: #327edb;
+    bottom: 0;
+    left: 7%;
+    transition: .2s;
+}
+.taskbar-settings-active .taskbar-icon-taskbar:hover:before{
+    width: 100%;
+    left: 0;
+}
+.taskbar_settings .taskbar_settings-topbar{
+    width: 100%;
+    height: 30px;
+    background-color: rgb(238, 238, 238);
+    position: fixed;
+}
+.taskbar_settings-topbar .taskbar_settings-topbar_left{
+    float: left;
+    margin-left: 6px;
+}
+.taskbar_settings-topbar .taskbar_settings-topbar_left h1{
+    font-size: 12px;
+    font-weight: 300;
+    display: inline-block;
+    margin-top: 7px;
+    position: absolute;
+}
+.taskbar_settings-topbar .taskbar_settings-topbar_right{
+    float: right;
+    height: 30px;
+    width: 34px;
+    text-align: center;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    font-size: 19px;
+    line-height: 30px;
+}
+.taskbar_settings-topbar .taskbar_settings-topbar_right:hover{
+    background-color: rgb(212, 36, 36);
+}
+.taskbar_settings_images_temp{
+    padding-top: 5vh;
+    position: absolute;
+    background-color: #fff;
+}
+.taskbar_settings_images_temp img{
+    cursor: pointer;
+    width: 95%;
+    margin-bottom: 20px;
+    transform: translate(0,0);
+    transition: 0.5s;
+    box-shadow: -20px 20px 10px rgba(0, 0, 0,.5);
+    margin-left: 29px;
+}
+.taskbar_settings_images_temp img:hover{
+    transform: translate(20px,15px);
+    box-shadow: -50px 50px 50px rgba(0, 0, 0,.5);
+}
+.taskbar_settings .taskbr_setting_bottom_settings{
+    margin-left: 40px;
+    margin-top: 30px;
+}
+.taskbar_settings .taskbr_setting_bottom_settings .settings_image_float{
+    float: right;
+    position: fixed;
+    margin-top: 30px;
+    margin-left: 250px;
+}
+.taskbar_settings_images_temp h3,h4{
+    font-size: 50px;
+    margin-top: 60px;
+    font-weight: 300;
+    margin-left: 40px;
+}
+.taskbar_settings_images_temp h4{
+    font-size: 35px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+/* Taskbar settings templete center items */
+.taskbar_setting_center .windows10-taskbar .windows10-taskbar-apps{
+    margin-left: 34%;
+}
+.taskbar_setting_center .windows10-taskbar .taskbar-window-icon .normal-img{
+    display: none;
+}
+.taskbar_setting_center .windows10-taskbar .taskbar-window-icon .hover-img{
+    display: inline-block;
+}
+.taskbar_setting_center .windows10-taskbar-search-app{
+    width: 48px;
+    text-align: center;
+    line-height: 40px;
+}
+.taskbar_setting_center .windows10-taskbar-search-app:hover{
+    background-color: rgba(255, 255, 255, .9);
+}
+.taskbar_setting_center .windows10-taskbar-search-app i{
+    left: 12px;
+    top: 11px;
+    font-size: 20px;
+}
+.taskbar_setting_center .windows10-taskbar-search-app input{
+    display: none;
+}
+.taskbar_setting_center .taskbar-icon-task-view{
+    display: none;
+}
+/* Taskbar settings small search */
+.taskbar_setting_small_search .windows10-taskbar-search-app{
+    width: 48px;
+    text-align: center;
+    line-height: 40px;
+}
+.taskbar_setting_small_search .windows10-taskbar-search-app:hover{
+    background-color: rgba(255, 255, 255, .9);
+}
+.taskbar_setting_small_search .windows10-taskbar-search-app i{
+    left: 12px;
+    top: 11px;
+    font-size: 20px;
+}
+.taskbar_setting_small_search .windows10-taskbar-search-app input{
+    display: none;
+}
+/* Taskbar settings black taskbar */
+.taskbar_setting_black .windows10-taskbar{
+    background: rgb(0 0 0 / 60%);
+}
+.taskbar_setting_black .windows10-taskbar .taskbar-window-icon .normal-img,
+.taskbar_setting_black .windows10-taskbar .taskbar-icon-task-view img{
+    filter: invert(0);
+}
+.taskbar_setting_black .windows10-taskbar .taskbar-window-icon:hover {
+    background: rgba(0,0,0,0.2);
+}
+.taskbar_setting_black .windows10-taskbar i{
+    color: #fff;
+}
+.taskbar_setting_black .windows10-taskbar-search-app{
+    width: 48px;
+    text-align: center;
+    line-height: 40px;
+}
+.taskbar_setting_black .windows10-taskbar-search-app:hover{
+    background-color: rgba(255, 255, 255, .9);
+}
+.taskbar_setting_black .windows10-taskbar-search-app i{
+    left: 12px;
+    top: 11px;
+    font-size: 20px;
+}
+.taskbar_setting_black .windows10-taskbar-search-app input{
+    display: none;
+}
+.taskbar_setting_black .taskbar-datetime span{
+    color: #fff;
+}
+.taskbar_setting_black .windows10-taskbar-right .taskbar-datetime:hover,
+.taskbar_setting_black .windows10-taskbar-apps .taskbar-icon.active,
+.taskbar_setting_black .windows10-taskbar-right .taskbar-datetime:hover,
+.taskbar_setting_black .windows10-taskbar-right .taskbar-notification:hover,
+.taskbar_setting_black .windows10-taskbar-right .taskbar-speaker:hover,
+.taskbar_setting_black .windows10-taskbar-right .taskbar-wifi-icon:hover,
+.taskbar_setting_black .windows10-taskbar-right .taskbar-show-hidden-icon:hover,
+.taskbar_setting_black .windows10-taskbar-apps .taskbar-icon:hover,
+.taskbar_setting_black .windows10-taskbar-search-app:hover{
+    background: rgb(255 255 255 / 10%);
+}
+.taskbar_setting_black.taskbar-settings-active .taskbar-icon-taskbar{
+    background: rgb(255 255 255 / 10%);
+}
+/* Taskbar settings black taskbar */
+.taskbar_setting_half_center .windows10-taskbar-search-app{
+    width: 48px;
+    text-align: center;
+    line-height: 40px;
+}
+.taskbar_setting_half_center .windows10-taskbar-search-app:hover{
+    background-color: rgba(255, 255, 255, .9);
+}
+.taskbar_setting_half_center .windows10-taskbar-search-app i{
+    left: 12px;
+    top: 11px;
+    font-size: 20px;
+}
+.taskbar_setting_half_center .windows10-taskbar-search-app input{
+    display: none;
+}
+.taskbar_setting_half_center .taskbar-icon-cortana{
+    margin-left: 330px;
+}
+/* Taskbar settings black normal taskbar */
+.taskbar_setting_black_normal .windows10-taskbar{
+    background: rgb(0 0 0 / 60%);
+}
+.taskbar_setting_black_normal .windows10-taskbar .taskbar-window-icon .normal-img,
+.taskbar_setting_black_normal .windows10-taskbar .taskbar-icon-task-view img{
+    filter: invert(0);
+}
+.taskbar_setting_black_normal .windows10-taskbar .taskbar-window-icon:hover {
+    background: rgba(0,0,0,0.2);
+}
+.taskbar_setting_black_normal .windows10-taskbar i{
+    color: #fff;
+}
+.taskbar_setting_black_normal .windows10-taskbar-search-app i{
+    left: 12px;
+    top: 11px;
+    font-size: 20px;
+}
+.taskbar_setting_black_normal .windows10-taskbar-search-app input{
+    background-color: rgb(255 255 255 / 10%);
+    border: none;
+}
+.taskbar_setting_black_normal .taskbar-datetime span{
+    color: #fff;
+}
+.taskbar_setting_black_normal .windows10-taskbar-right .taskbar-datetime:hover,
+.taskbar_setting_black_normal .windows10-taskbar-apps .taskbar-icon.active,
+.taskbar_setting_black_normal .windows10-taskbar-right .taskbar-datetime:hover,
+.taskbar_setting_black_normal .windows10-taskbar-right .taskbar-notification:hover,
+.taskbar_setting_black_normal .windows10-taskbar-right .taskbar-speaker:hover,
+.taskbar_setting_black_normal .windows10-taskbar-right .taskbar-wifi-icon:hover,
+.taskbar_setting_black_normal .windows10-taskbar-right .taskbar-show-hidden-icon:hover,
+.taskbar_setting_black_normal .windows10-taskbar-apps .taskbar-icon:hover,
+.taskbar_setting_black_normal .windows10-taskbar-search-app:hover{
+    background: rgb(255 255 255 / 10%);
+}
+.taskbar_setting_black_normal .taskbar-icon-taskbar{
+    background: rgb(255 255 255 / 10%);
+}
+.taskbar_setting_center .taskbar-icon-task-view{
+    display: none;
+}
+/* Taskbar settings black taskbar */
+.taskbar_setting_half_black .windows10-taskbar{
+    background: rgb(0 0 0 / 60%);
+}
+.taskbar_setting_half_black .windows10-taskbar .taskbar-window-icon .normal-img,
+.taskbar_setting_half_black .windows10-taskbar .taskbar-icon-task-view img{
+    filter: invert(0);
+}
+.taskbar_setting_half_black .windows10-taskbar .taskbar-window-icon:hover {
+    background: rgba(0,0,0,0.2);
+}
+.taskbar_setting_half_black .windows10-taskbar i{
+    color: #fff;
+}
+.taskbar_setting_half_black .windows10-taskbar-search-app{
+    width: 48px;
+    text-align: center;
+    line-height: 40px;
+}
+.taskbar_setting_half_black .windows10-taskbar-search-app:hover{
+    background-color: rgba(255, 255, 255, .9);
+}
+.taskbar_setting_half_black .windows10-taskbar-search-app i{
+    left: 12px;
+    top: 11px;
+    font-size: 20px;
+}
+.taskbar_setting_half_black .windows10-taskbar-search-app input{
+    display: none;
+}
+.taskbar_setting_half_black .taskbar-datetime span{
+    color: #fff;
+}
+.taskbar_setting_half_black .taskbar-icon-cortana{
+    margin-left: 330px;
+}
+.taskbar_setting_half_black .windows10-taskbar-right .taskbar-datetime:hover,
+.taskbar_setting_half_black .windows10-taskbar-apps .taskbar-icon.active,
+.taskbar_setting_half_black .windows10-taskbar-right .taskbar-datetime:hover,
+.taskbar_setting_half_black .windows10-taskbar-right .taskbar-notification:hover,
+.taskbar_setting_half_black .windows10-taskbar-right .taskbar-speaker:hover,
+.taskbar_setting_half_black .windows10-taskbar-right .taskbar-wifi-icon:hover,
+.taskbar_setting_half_black .windows10-taskbar-right .taskbar-show-hidden-icon:hover,
+.taskbar_setting_half_black .windows10-taskbar-apps .taskbar-icon:hover,
+.taskbar_setting_half_black .windows10-taskbar-search-app:hover{
+    background: rgb(255 255 255 / 10%);
+}
+.taskbar_setting_half_black .taskbar-icon-taskbar{
+    background: rgb(255 255 255 / 10%);
+}
+/* Taskbar settings full black taskbar */
+.taskbar_setting_full_black .windows10-taskbar{
+    background: rgb(0 0 0 / 60%);
+}
+.taskbar_setting_full_black .windows10-taskbar .taskbar-window-icon .normal-img,
+.taskbar_setting_full_black .windows10-taskbar .taskbar-icon-task-view img{
+    filter: invert(0);
+}
+.taskbar_setting_full_black .windows10-taskbar .taskbar-window-icon:hover {
+    background: rgba(0,0,0,0.2);
+}
+.taskbar_setting_full_black .windows10-taskbar i{
+    color: #fff;
+}
+.taskbar_setting_full_black .windows10-taskbar-search-app{
+    width: 48px;
+    text-align: center;
+    line-height: 40px;
+}
+.taskbar_setting_full_black .windows10-taskbar-search-app:hover{
+    background-color: rgba(255, 255, 255, .9);
+}
+.taskbar_setting_full_black .windows10-taskbar-search-app i{
+    left: 12px;
+    top: 11px;
+    font-size: 20px;
+}
+.taskbar_setting_full_black .windows10-taskbar-search-app input{
+    display: none;
+}
+.taskbar_setting_full_black .taskbar-datetime span{
+    color: #fff;
+}
+.taskbar_setting_full_black .windows10-taskbar-right .taskbar-datetime:hover,
+.taskbar_setting_full_black .windows10-taskbar-apps .taskbar-icon.active,
+.taskbar_setting_full_black .windows10-taskbar-right .taskbar-datetime:hover,
+.taskbar_setting_full_black .windows10-taskbar-right .taskbar-notification:hover,
+.taskbar_setting_full_black .windows10-taskbar-right .taskbar-speaker:hover,
+.taskbar_setting_full_black .windows10-taskbar-right .taskbar-wifi-icon:hover,
+.taskbar_setting_full_black .windows10-taskbar-right .taskbar-show-hidden-icon:hover,
+.taskbar_setting_full_black .windows10-taskbar-apps .taskbar-icon:hover,
+.taskbar_setting_full_black .windows10-taskbar-search-app:hover{
+    background: rgb(255 255 255 / 10%);
+}
+.taskbar_setting_full_black .windows10-taskbar .windows10-taskbar-apps{
+    margin-left: 29vw;
+}
+.taskbar_setting_full_black .taskbar-icon-taskbar{
+    background: rgb(255 255 255 / 10%);
+}
+/* Start menu black theme */
+.start_menu_black_theme .windows10-desktop-area {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.start_menu_black_theme .windows10-start-area {
+    background: rgb(34 34 34 / 90%);
+}
+.start_menu_black_theme .windows10-start-area .windows10-start-content-left {
+    background: rgb(34 34 34 / 60%);
+}
+.start_menu_black_theme .windows10-start-content-start-btn .windows10-start-btn-bars span {
+    background: #ffffff;
+}
+.start_menu_black_theme .windows10-start-content-start-btn,
+.start_menu_black_theme .windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom {
+    color: #fff;
+}
+.start_menu_black_theme .windows10-start-content-start-btn:hover,
+.start_menu_black_theme .windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom ul li:hover {
+    background: #5d5d5d;
+}
+.start_menu_black_theme .windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom ul li:first-child i:after {
+    background: #666666;
+}
+.start_menu_black_theme .windows10-start-content-middle:hover::-webkit-scrollbar-thumb {
+    background: #a8a8a8;
+}
+.start_menu_black_theme .windows10-start-content-middle ul li a {
+    color: #fff;
+}
+.start_menu_black_theme .windows10-start-content-middle ul li:hover {
+    background: linear-gradient(to left, #5d5e5f, #383a3c);
+}
+.start_menu_black_theme .windows10-start-content-right {
+    background: rgb(34 34 34 / 90%);;
+}
+.start_menu_black_theme .windows10-start-content-right-create-tab  .small_widget{
+    background-color: rgba(119, 119, 119, 0.4);
+    border: 1px solid rgba(119, 119, 119, 0.4);
+}
+.start_menu_black_theme .windows10-start-content-right-create-tab .large_widget{
+    background-color: rgba(119, 119, 119, 0.4);
+    border: 1px solid rgba(119, 119, 119, 0.4);
+}
+.start_menu_black_theme .windows10-start-content-right-create-tab h1,
+.start_menu_black_theme .start_menu-profile h1,
+.start_menu_black_theme .small_widget_day-time_widget div{
+    color: #fff;
+}
+.desk_applications .desktop-app{          /* Desktop Medium icons */
+    width: 6.5vw;
+    height: 12vh;
+    transition: .2s ease all;
+    margin: 4px 4px 4px 4px;
+    padding: 12px 12px 12px 12px;
+    min-height: auto;
+    min-width: auto;
+    z-index: 999999999999;
+    text-align: center;
+}
+.desk_applications .desktop-app h1{
+    font-size: 1.7vh;
+    margin: 4px 0 4px 0;
+    color: #fafafa;
+    font-weight: 400;
+}
+.desk_applications .desktop-app img{
+    height: 4.7vh;
+    width: 4.7vh;
+}
+/* Main Windows Section */
+.main-windows {
+    z-index: 9;
+    min-height: 430px;
+    min-width: 800px;
+    max-height: 1000px;
+    max-width: 1000px;
+    background: #fff;
+    box-shadow: 0 0 15px rgb(0 0 0 / 32%);
+    border: 1px solid #fff;
+    position: absolute;
+    overflow: hidden;
+    transform: scale(0.8);
+    opacity: 0;
+    visibility: hidden;
+}
+.main-windows.active {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+.resizer-right {
+    width: 3px;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: e-resize;
+    z-index: 999999999999;
+}
+.resizer-bottom {
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: n-resize;
+    z-index: 999999999999;
+}
+.resizer-both {
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    z-index: 10;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: nw-resize;
+}
+.main-windows * {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+/* Windows Header Bar */
+.windows-header-bar .windows-header-bar-folders {
+    width: 234px;
+}
+.windows-header-bar .windows-header-bar-folders > * {
+    position: relative;
+    padding: 0 8px 8px 8px;
+    margin-top: 8px;
+}
+.windows-header-bar .windows-header-bar-folders > *:before {
+    content: '';
+    width: 1px;
+    height: 12px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #7a7a7a;
+}
+.windows-header-bar .windows-header-bar-folders .windows-header-bar-folder-2 {
+    padding-right: 2px;
+    padding-left: 10px;
+}
+.windows-header-bar .windows-header-bar-folders .windows-header-bar-folder-2:before {
+    display: none;
+}
+.windows-header-bar .windows-header-foder-name {
+    padding-top: 5px;
+}
+.windows-header-bar .windows-header-foder-name .windows-header-folder-manage-text {
+    background: #c1f09d;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 400;
+    color: #383b35;
+    padding: 7px 20px;
+    margin-right: 15px;
+}
+.windows-header-bar .windows-header-foder-name .windows-header-folder-name-text {
+    color: #aaaaaa;
+    font-size: 12px;
+}
+/* Windows Close Buttons */
+.windows-close-buttons > * {
+    display: inline-block;
+    width: 46px;
+    height: 31px;
+    line-height: 31px;
+    text-align: center;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    font-size: 17px;
+    position: relative;
+}
+.windows-close-buttons > *:hover {
+    background: #e5e5e5;
+}
+.windows-close-buttons .windows-maximize-btn:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border: 1px solid #000000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -5px;
+    margin-top: -5px;
+}
+.windows-close-buttons .windows-close-btn:hover {
+    background: #e81123;
+    color: #ffffff;
+}
+/* Windows Menu Bar */
+.windows-header-nav-menu  li {
+    margin-right: 2px;
+}
+.windows-header-nav-menu  li a {
+    display: inline-block;
+    text-decoration: none;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    color: #313131;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 4px 14px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    position: relative;
+    cursor: context-menu;
+}
+.windows-header-nav-menu  li.active a {
+    background: #0066b4;
+    color: #ffffff;
+    padding: 4px 17px;
+}
+.windows-header-nav-menu  li.active a:hover {
+    background: #007ddd;
+}
+.windows-header-nav-menu  li a:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-left: 1px solid #ebecec;
+    border-right: 1px solid #ebecec;
+    border-top: 1px solid #ebecec;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+}
+.windows-header-nav-menu  li.active a:before {
+    display: none;
+}
+.windows-header-nav-menu  li a:hover:before {
+    visibility: visible;
+    opacity: 1;
+}
+.windows-header-nav-menu  li.menu-drive-tools a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-image: 
+    linear-gradient(
+      to bottom, 
+      #c1c1c1, 
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+}
+.windows-header-nav-menu li.menu-drive-tools a {
+    padding: 4px 13px;
+}
+.windows-header-nav-menu li.menu-drive-tools a:before {
+    border-left: 1px solid #c1f09d;
+    border-right: 1px solid #c1f09d;
+    border-top: 1px solid #c1f09d;
+}
+.windows-header-nav-menu li.menu-drive-tools a:hover:after {
+    opacity: 0;
+}
+.windows-header-menu-bar {
+    border-bottom: 1px solid #dadbdc;
+}
+.windows-header-menu-bar .windows-header-menu-bar-right .windows-header-menu-help,
+.windows-header-menu-bar .windows-header-menu-bar-right .windows-header-menu-ribbon-toggle {
+    font-size: 12px;
+    color: #a6a6a6;
+    border: 1px solid transparent;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    cursor: context-menu;
+}
+.windows-header-menu-bar .windows-header-menu-bar-right .windows-header-menu-help:hover,
+.windows-header-menu-bar .windows-header-menu-bar-right .windows-header-menu-ribbon-toggle:hover {
+    border: 1px solid #abd4fe;
+    background: #f1f7fe;
+}
+.windows-header-menu-bar .windows-header-menu-bar-right .windows-header-menu-help {
+    color: #ffffff;
+    z-index: 1;
+}
+.windows-header-menu-bar .windows-header-menu-bar-right .windows-header-menu-help:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -7px;
+    margin-top: -7px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #0078d7;
+    z-index: -1;
+}
+.windows-header-controls-panel {
+    margin-top: 5px;
+}
+.windows-header-controls-panel .windows-header-arrows-controls {
+    padding-left: 4px;
+}
+.windows-header-controls-panel .windows-header-arrows-controls .windows-header-arrow-next,
+.windows-header-controls-panel .windows-header-arrows-controls .windows-header-arrow-preview {
+    color: #808080;
+    font-size: 17px;
+    padding: 4px 7px;
+}
+.windows-header-controls-panel .windows-header-arrows-controls .windows-header-arrow-down:hover,
+.windows-header-controls-panel .windows-header-arrows-controls .windows-header-arrow-preview:hover {
+    color: #3298fe;
+}
+.windows-header-controls-panel .windows-header-arrows-controls .windows-header-arrow-next {
+    color: #dfdfdf;
+}
+.windows-header-controls-panel .windows-header-arrows-controls .windows-header-arrow-down {
+    font-size: 9px;
+    color: #808080;
+    margin-left: 4px;
+}
+.windows-header-controls-panel .windows-header-arrows-controls .windows-header-arrow-up {
+    color: #808080;
+    font-size: 17px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    border: 1px solid transparent;
+    width: 22px;
+    height: 21px;
+    line-height: 21px;
+    text-align: center;
+    margin: 0 1px 0 5px;
+}
+.windows-header-controls-panel .windows-header-arrows-controls .windows-header-arrow-up:hover {
+    background: #e5f3ff;
+    border-color: #cce8ff;
+}
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel {
+    border: 1px solid #d9d9d9;
+    padding-left: 2px;
+    margin-right: 12px;
+}
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel .left-panel i {
+    font-size: 10px;
+    display: inline-block;
+    margin: 0 5px;
+}
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel .left-panel .folder-name {
+    display: inline-block;
+    font-size: 12px;
+}
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel .right-panel i {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    display: inline-block;
+    color: #808080;
+    font-size: 12px;
+}
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel .right-panel .windows-header-folder-breadcrumb-preview-location {
+    border-left: 1px solid transparent;
+}
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel .right-panel .windows-header-folder-breadcrumb-preview-location:hover,
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel .right-panel .windows-header-folder-breadcrumb-refresh {
+    border-left: 1px solid #d9d9d9;
+}
+.windows-header-controls-panel .windows-header-folder-breadcrumb-panel .right-panel i:hover {
+    background: #e5f3fb;
+    -webkit-box-shadow: 0 0 0px 1px #70c0e7 inset;
+    -moz-box-shadow: 0 0 0px 1px #70c0e7 inset;
+    box-shadow: 0 0 0px 1px #70c0e7 inset;
+}
+.windows-header-search-form {
+    position: relative;
+    margin-right: 12px;
+}
+.windows-header-search-form .windows-header-search-icon {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    color: #969696;
+}
+.windows-header-search-form input {
+    width: 202px;
+    border: 1px solid #d9d9d9;
+    height: 30px;
+    padding-left: 40px;
+    font-size: 11px;
+}
+.windows-header-search-form input::placeholder,
+.windows-header-search-form input::-webkit-input-placeholder,
+.windows-header-search-form input::-moz-placeholder {
+    color: #6d6d6d;
+}
+button:focus,
+.windows-header-search-form input:focus {
+    outline: none;
+    box-shadow: none;
+}
+.windows-sidebar {
+    padding-top: 7px;
+    position: relative;
+    width: 178px;
+}
+.windows-content-area .windows-folder-lists {
+    padding-left: 15px;
+}
+.windows-sidebar-menu {
+    border-right: 1px solid #f7f7f7;
+    height: 100%;
+}
+.windows-sidebar-menu li .windows-sidebar-menu-icon {
+    color: #a6a6a6;
+    font-size: 12px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    margin-right: 2px;
+    opacity: 0;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+}
+.windows-sidebar-menu:hover li .windows-sidebar-menu-icon {
+    opacity: 1;
+}
+.windows-sidebar-menu li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    display: inline-flex;
+    align-items: center;
+}
+.windows-sidebar-menu li a img {
+    margin-right: 5px;
+}
+.windows-sidebar-menu li {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    z-index: 1;
+}
+.windows-sidebar-menu li:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 24px;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: #e5f3ff;
+    opacity: 0;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+}
+.windows-sidebar-menu li:hover:before {
+    opacity: 1;
+}
+.windows-sidebar-menu li ul {
+    width: 100%;
+}
+.windows-sidebar-menu li ul li {
+    padding-left: 8px;
+}
+.folder-number-and-view-list-icon {
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #ffffff;
+    font-size: 13px;
+    padding: 8px 14px;
+}
+/* Content */
+.windows-content-area {
+    padding-top: 8px;
+}
+.windows-content-sort-filter {
+    margin-bottom: 5px;
+}
+.windows-content-sort-filter > span {
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 7px;
+    border-left: 1px solid #e5e5e5;
+    cursor: context-menu;
+}
+.windows-folder-list:hover,
+.windows-content-sort-filter > span:hover {
+    background: #e5f3ff;
+}
+.windows-content-sort-filter .sort-name {
+    border: none;
+    padding: 5px 16px;
+    min-width: 260px;
+}
+.windows-content-sort-filter .sort-type {
+    min-width: 125px;
+}
+.windows-content-sort-filter .sort-size {
+    min-width: 112px;
+}
+.windows-folder-list {
+    font-size: 12px;
+    padding: 3px 6px;
+    cursor: context-menu;
+}
+.windows-folder-list .folder-name {
+    min-width: 250px;
+    letter-spacing: 0.2px;
+}
+.windows-folder-list .folder-name img {
+    margin-right: 6px;
+}
+.windows-folder-list .folder-type,
+.windows-folder-list .folder-size,
+.windows-folder-list .folder-date {
+    color: #6d6d6d;
+}
+.windows-folder-list .folder-type {
+    min-width: 120px;
+}
+.windows-folder-list .folder-size {
+    min-width: 100px;
+}
+/* Windows10 Desktop */
+.windows10-desktop-area {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: url('../images/ball.png');
+    background-size: cover;
+    background-position: center;
+}
+/* Chrome Browser */
+.chrome-browser-area {
+    width: 1000px;
+    height: 500px;
+    position: fixed;
+    border: 2px solid #f1f1f1;
+    border-top-width: 1px;
+    background: #fff;
+    border-radius: 0 0 4px 4px;
+    transform: scale(0.8);
+    opacity: 0;
+    visibility: hidden;
+}
+.chrome-browser-area.active {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+}
+.chrome-browser-area .chrome-browser-header {
+    background: #f1f1f1;
+    position: relative;
+}
+.chrome-browser-drag {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: all-scroll;
+}
+.chrome-browser-area .chrome-browser-header .chrome-browser-left img {
+    width: 18px;
+    margin-left: 5px;
+}
+.chrome-browser-area .chrome-browser-header .chrome-browser-middle,
+.chrome-browser-area .chrome-browser-header .chrome-browser-right {
+    z-index: 5;
+}
+.chrome-browser-area .chrome-browser-header .chrome-browser-middle input {
+    border: none;
+    background: #ffffff;
+    width: 500px;
+    padding: 6px 20px;
+    border-radius: 3px;
+    border: 1px solid #eeeeee;
+}
+.chrome-browser-area .chrome-browser-header .chrome-browser-middle button {
+    border: none;
+    background: #0798ec;
+    color: #ffffff;
+    padding: 6px 5px;
+    border-radius: 4px;
+    margin-left: 2px;
+    cursor: pointer;
+}
+.chrome-browser-area .chrome-browser-body {
+    height: 464px;
+    width: 100%;
+    background: #ffffff;
+    padding: 4px;
+}
+.chrome-browser-area .go-to-home {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.chrome-browser-area .go-to-home:hover {
+    background: #d4d4d4;
+    z-index: 9999999;
+}
+
+
+
+/* Start Bar */
+.windows10-start-area {
+    width: 830px;
+    height: 641px;
+    position: fixed;
+    z-index: 9999999;
+    left: 0;
+    bottom: -40px;
+    overflow: hidden;
+    background: #e5eaf1;
+    backdrop-filter: blur(30px);
+    padding-left: 48px;
+    padding-right: 4px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    opacity: 0;
+    visibility: hidden;
+    overflow: visible;
+}
+.windows10-start-area.active {
+    opacity: 1;
+    visibility: visible;
+    bottom: 40px;
+}
+.windows10-start-area .windows10-start-content-left {
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 99;
+    width: 46px;
+    background: #e6e3e3;
+    backdrop-filter: blur(30px);
+    overflow: hidden;
+    transition: .3s cubic-bezier(1, -0.11, 0.95, 0.19);
+    -webkit-transition: .3s cubic-bezier(1, -0.11, 0.95, 0.19);
+    -moz-transition: .3s cubic-bezier(1, -0.11, 0.95, 0.19);
+    -ms-transition: .3s cubic-bezier(1, -0.11, 0.95, 0.19);
+    -o-transition: .3s cubic-bezier(1, -0.11, 0.95, 0.19);
+}
+.windows10-start-area .windows10-start-content-left:hover {
+    box-shadow: 0 0 30px rgb(0 0 0 / 35%);
+    -webkit-box-shadow: 0 0 30px rgb(0 0 0 / 35%);
+    -moz-box-shadow: 0 0 30px rgb(0 0 0 / 35%);
+}
+.windows10-start-area .windows10-start-content-left .windows10-start-content-left-top,
+.windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom,
+.windows10-start-area .windows10-start-content-left:hover {
+    width: 256px;
+}
+.windows10-start-content-start-btn {
+    height: 46px;
+    cursor: context-menu;
+}
+.windows10-start-content-start-btn .windows10-start-btn-bars {
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    flex-direction: column;
+}
+.windows10-start-content-start-btn .windows10-start-btn-bars span {
+    width: 16px;
+    height: 1px;
+    background: #000;
+}
+.windows10-start-content-start-btn .windows10-start-btn-bars span + span {
+    margin-top: 3px;
+}
+.windows10-start-content-start-btn > span {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom ul li {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    width: 100%;
+    height: 46px;
+    cursor: context-menu;
+}
+.windows10-start-content-start-btn:hover,
+.windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom ul li:hover {
+    background: #fff;
+}
+.windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom ul li i {
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    font-size: 18px;
+    position: relative;
+}
+.windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom ul li:first-child i {
+    font-size: 12px;
+}
+.windows10-start-content-start-btn > span,
+.windows10-start-area .windows10-start-content-left .windows10-start-content-left-bottom ul li span {
+    opacity: 0;
+    transition: .3s cubic-bezier(0.2, 0.61, 0.71, 0.97);
+    -webkit-transition: .3s cubic-bezier(0.2, 0.61, 0.71, 0.97);
+    -moz-transition: .3s cubic-bezier(0.2, 0.61, 0.71, 0.97);
+    -ms-transition: .3s cubic-bezier(0.2, 0.61, 0.71, 0.97);
+    -o-transition: .3s cubic-bezier(0.2, 0.61, 0.71, 0.97);
+}
+.windows10-start-area .windows10-start-content-left:hover .windows10-start-content-start-btn > span,
+.windows10-start-area .windows10-start-content-left:hover .windows10-start-content-left-bottom ul li span {
+    opacity: 1;
+    transition: .4s cubic-bezier(1, 0.01, 0.49, 0.56);
+    -webkit-transition: .4s cubic-bezier(1, 0.01, 0.49, 0.56);
+    -moz-transition: .4s cubic-bezier(1, 0.01, 0.49, 0.56);
+    -ms-transition: .4s cubic-bezier(1, 0.01, 0.49, 0.56);
+    -o-transition: .4s cubic-bezier(1, 0.01, 0.49, 0.56);
+}
+/* Windows10 Start bar Middle */
+.windows10-start-content-middle::-webkit-scrollbar {
+    width: 2px;
+}
+.windows10-start-content-middle::-webkit-scrollbar-track {
+    box-shadow: none;
+}
+.windows10-start-content-middle::-webkit-scrollbar-thumb {
+    outline: none;
+    background: none;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.windows10-start-content-middle:hover::-webkit-scrollbar-thumb {
+    background: #a8a8a8;
+}
+.windows10-start-content-middle {
+    width: 268px;
+    flex: none;
+    overflow-x: hidden;
+    padding-right: 8px;
+    padding-bottom: 55px;
+}
+.windows10-start-content-middle ul {
+    cursor: context-menu;
+}
+.windows10-start-content-middle ul li a {
+    display: flex;
+    align-items: center;
+    color: #000;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    width: 100%;
+}
+.windows10-start-content-middle ul li.item-divider {
+    height: 34px;
+    line-height: 34px;
+    padding: 0 5px;
+    font-size: 14px;
+}
+.windows10-start-content-middle ul li:hover {
+    background: linear-gradient(to right, #fff, rgb(211, 217, 219));
+}
+.windows10-start-content-middle ul li + li{
+    margin-top: 4px;
+}
+.windows10-start-content-middle ul li a .app-image {
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    flex: none;
+    background: #0078d7;
+    line-height: 41px;
+    margin-right: 8px;
+}
+.windows10-start-content-middle ul li a .app-image img {
+    width: 22px;
+}
+.windows10-start-content-middle ul li a .app-name {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.4px;
+}
+
+
+/* Windows10 Start bar Right */
+.windows10-start-content-right {
+    padding-right: 12px;
+    padding-left: 7px;
+    overflow-x: hidden;
+    background: rgba(221, 227, 235, 0.9);
+    margin-left: 10px;
+    border-radius: 4px;
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
+    overflow: visible;
+}
+.windows10-start-content-right-create-tab div{
+  text-align: center;
+}
+.windows10-start-content-right-create-tab div img{
+  height: 44px;
+  width: 44px;
+  margin-top: 26px;
+  margin-bottom: 4px;
+}
+.windows10-start-content-right-create-tab{
+  margin-top: 7px;
+  margin-left: 14px;
+}
+.windows10-start-content-right-create-tab h1{
+  font-size: 17px;
+  font-weight: 400;
+}
+.windows10-start-content-right-create-tab .small_widget_day-time_widget{
+  margin-top: -100px;
+  position: relative;
+}
+.windows10-start-content-right-create-tab  .small_widget{
+    background-color: rgba(255,255,255,.6);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    height: 120px;
+    width: 120px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 7px;
+    margin-left: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.windows10-start-content-right-create-tab .small_widget_day-time_widget .date-day-name{
+  display: none;
+}
+.windows10-start-content-right-create-tab .small_widget_day-time_widget .date-day{
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 120px;
+}
+ .windows10-start-content-right-create-tab .large_widget{
+   height: 120px;
+   width: 200px;
+   display: inline-block;
+   border-radius: 4px;
+   margin-top: 5px;
+   margin-left: 2px;
+   background-color: rgba(255,255,255,.6);
+   border: 1px solid rgba(255, 255, 255, 0.6);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+ }
+.windows10-start-content-right-create-tab .large_widget:hover, .windows10-start-content-right-create-tab .small_widget:hover{
+  border: 1px solid #bac1c7;
+}
+ .windows10-start-content-right-create-tab .small_widget_day-time_widget{
+  position: absolute;
+}
+.windows10-start-content-right-create-tab .small_widget_margin_widget{
+  margin-left: 130px;
+}
+.start_menu-profile{
+  width: 100%;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.start_menu-profile .start-menu_profile_pic{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin-left: 42.5%;
+  margin-top: -30px;
+  background-image: url(../icons/logo.png);
+  background-position: center;
+  background-size: 120% 120%;
+}
+.start_menu-profile h1{
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 2px;
+}
+/* RIGHT CLICK MENU */
+#cmenu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.cm_container{
+    position: fixed;
+    opacity: 0;
+    transition: transform 0.1s;
+    transform-origin: top left;
+    padding: 0;
+    z-index: 999999999999;
+    visibility: hidden;
+}
+.cm_container.display{
+    opacity: 1;
+    visibility: visible;
+}
+.cm_container, .cm_container *{
+    box-sizing: border-box;
+}
+.cm_container *{
+    position: relative;
+}
+.cm_container ul{
+    list-style-type: none;
+    padding: 0 0 5px 0;
+    margin: 0;
+    background-color: rgba(255,255,255);
+    border-radius: 5px;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    width: 250px;
+}
+.cm_container li{
+    padding: 4px 10px;
+    padding-right: 1.7em;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+.cm_container li a {
+    text-decoration: none;
+    color: #000000;
+}
+.cm_container li:hover{
+    background-color: rgba(189, 189, 189, 0.4);
+}
+.cm_container li .cm_icon_span{
+    width: 1.5em;
+    height: 1.2em;
+    vertical-align: bottom;
+    display: inline-block;
+    margin-right: 5px;
+    padding-right: 5px;
+    text-align: center;
+}
+.cm_container li .cm_sub_span{
+    width: 1em;
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    right: 0.5em;
+    transform: translateY(-50%);
+}
+.cm_container li > ul{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    opacity: 0;
+    transition: opacity 0.2s;
+    visibility: hidden;
+}
+.cm_container li:hover > ul{
+    opacity: 1;
+    visibility: visible;
+}
+.cm_container li.cm_divider{
+    border-bottom: 1px solid #aaa;
+    margin: 5px;
+    padding: 0;
+    cursor: default;
+}
+.cm_container li.cm_divider:hover{
+    background-color: inherit;
+}
+.cm_container.cm_border_right > ul ul{
+    left: unset;
+    right: 100%;
+}
+.cm_container.cm_border_bottom > ul ul{
+    top: 0;
+}
+.cm_container li[disabled=""]{
+    color: #777;
+    cursor: default;
+}
+.cm_container li[disabled=""]:hover{
+    background-color: inherit;
+}
+
+#cm_0 li:nth-child(7) .cm_text {
+    display: initial;
+}
+#cm_0 li:nth-child(7) .undo-copy {
+    float: right;
+}
+#cm_0 li:first-child ul li:nth-child(3) .cm_icon_span i {
+    color: #000;
+    background: #000;
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+    text-align: center;
+    margin: auto;
+    font-size: 7px;
+    display: inline-block;
+    transform: translateY(-2px);
+}
+
+
+#cm_1 ul {
+    border: 1px solid #a0a0a0;
+    width: 300px;
+    background-color: rgba(255,255,255);
+    border-radius: 2px;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+}
+#cm_1 ul li:hover {
+    background: #e6e6e6f1;
+}
+#cm_1 ul li {
+    padding: 8px 10px;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    color: #000;
+}
+#cm_1 ul .cm_divider {
+    padding: 0;
+}
+/* Windows10 Notification Panel */
+.windows10-notification-panel {
+    right: -100%;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    position: fixed;
+    width: 360px;
+    top: 0;
+}
+.windows10-notification-panel.active {
+    right: 0;
+}
+.quick-settings{
+    height: 405px;
+    width: 360px;
+    background: hsla(0,0%,100%,.89);
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    border-radius: 7px;
+    position: fixed;
+    transition: 0.2s all ease-in-out;
+    margin-right: 0.9%;
+    bottom: 0;
+    margin-bottom: 47px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+ }
+ .quick-data{
+    height: 365px;
+    width: 340px;
+    margin-top: 19px;
+    margin-left: 12px;
+ }
+ .quick-item-div{
+    height: 87px;
+    width: 98px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 9px;
+ }
+ .quick-item-div .quick-item{
+    width: 98px;
+    height: 48px;
+    border: 1px solid #111111 undefined;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .9);
+    cursor: pointer;
+ }
+ .quick-item-div .quick-item img{
+    height: 16px;
+    width: 16px;
+    margin-top: 15px;
+ }
+ .quick-item-div h1{
+    font-size: 12px;
+    font-weight: 400;
+    margin: 7px 0 0 0;
+ }
+ .quick-input-div div:nth-child(1){
+    margin-top: 12px;
+    margin-bottom: 20px;
+ }
+.quick-item-div.quick-item_blue .quick-item{
+    background-color: #4777fc;
+}
+.quick-item-div.quick-item_blue .quick-item img{
+    filter: invert(1);
+}
+ .quick-input-div img{
+    height: 22px;
+    width: 22px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+ }
+ .quick-input-div input{
+    width: 280px;
+    display: flex;
+    display: inline-block;
+ }
+ .quick-item-div.active .quick-item img{
+    filter: invert(1);
+ }
+
+/* Windows10 Taskbar */
+.windows10-taskbar {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: hsla(0,0%,99.6%,.8);
+   -webkit-backdrop-filter: blur(20px);
+   backdrop-filter: blur(20px);
+    z-index: 99999;
+}
+.windows10-taskbar .taskbar-icon img {
+    width: 22px;
+}
+.windows10-taskbar .windows10-taskbar-apps {
+    height: 100%;
+}
+.windows10-taskbar .taskbar-window-icon {
+    font-size: 18px;
+    height: 100%;
+    width: 48px;
+    text-align: center;
+    line-height: 44px;
+}
+.windows10-taskbar .taskbar-window-icon img{
+  height: 18px;
+  width: 18px;
+}
+.windows10-taskbar .taskbar-window-icon .normal-img,.windows10-taskbar .taskbar-icon-task-view img{
+  filter: invert(1);
+}
+.windows10-taskbar-apps .taskbar-icon-task-view:hover img.normal-icon,
+.windows10-taskbar-apps .taskbar-icon-task-view img.hover-icon,
+.windows10-taskbar .taskbar-window-icon:hover img.normal-img,
+.windows10-taskbar .taskbar-window-icon img.hover-img {
+    display: none
+}
+.windows10-taskbar-apps .taskbar-icon-task-view:hover img.hover-icon,
+.windows10-taskbar .taskbar-window-icon:hover img.hover-img {
+    display: inline-block;
+}
+.windows10-taskbar-search-app {
+    position: relative;
+    height: 100%;
+    width: 340px;
+}
+.windows10-taskbar-search-app i {
+    position: absolute;
+    left: 10px;
+    top: 13px;
+}
+.windows10-taskbar-search-app input {
+    height: 100%;
+    width: 100%;
+    background: rgba(255,255,255,.9);
+    border: 1px solid #c2c2c2;
+    color: #2b2b2b;
+    padding: 0 20px 0 36px;
+}
+.windows10-taskbar-search-app:hover i{
+    color: #1035f3;
+}
+
+.windows10-taskbar-search-app input::-moz-placeholder,
+.windows10-taskbar-search-app input::-webkit-input-placeholder,
+.windows10-taskbar-search-app input::placeholder {
+    color: #2b2b2b;
+}
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+.windows10-taskbar-apps .taskbar-icon{
+    width: 48px;
+    text-align: center;
+    height: 100%;
+    line-height: 50px;
+    margin-right: 2px;
+    position: relative;
+}
+.windows10-taskbar-right .taskbar-datetime:hover,
+.windows10-taskbar-apps .taskbar-icon.active,
+.windows10-taskbar-right .taskbar-datetime:hover,
+.windows10-taskbar-right .taskbar-notification:hover,
+.windows10-taskbar-right .taskbar-speaker:hover,
+.windows10-taskbar-right .taskbar-wifi-icon:hover,
+.windows10-taskbar-right .taskbar-show-hidden-icon:hover,
+.windows10-taskbar-apps .taskbar-icon:hover,
+.windows10-taskbar .taskbar-window-icon:hover {
+    background: #fff;
+}
+.windows10-taskbar-apps .taskbar-icon-task-view {
+    line-height: 46px;
+}
+.windows10-taskbar-apps .taskbar-icon-task-view img {
+    width: auto;
+}
+.windows10-taskbar-right .taskbar-datetime,
+.windows10-taskbar-right .taskbar-notification,
+.windows10-taskbar-right .taskbar-wifi-icon,
+.windows10-taskbar-right {
+    height: 100%;
+}
+.windows10-taskbar-right .taskbar-show-hidden-icon {
+    width: 26px;
+    text-align: center;
+    height: 100%;
+    line-height: 42px;
+    margin-right: 2px;
+}
+.windows10-taskbar-right .taskbar-speaker,
+.windows10-taskbar-right .taskbar-wifi-icon {
+    line-height: 42px;
+    font-size: 22px;
+    margin-right: 2px;
+    padding: 0 2px 0 0;
+    margin-right: 2px;
+}
+.windows10-taskbar-right .taskbar-wifi-icon i {
+    transform: rotate(45deg);
+}
+.windows10-taskbar-right .taskbar-speaker {
+    padding-right: 1px;
+    padding-left: 1px;
+}
+.windows10-taskbar-right .taskbar-notification {
+    width: 42px;
+    text-align: center;
+    font-size: 21px;
+    line-height: 42px;
+}
+.windows10-taskbar-right .taskbar-datetime {
+    vertical-align: middle;
+    width: 76px;
+    text-align: center;
+    cursor: context-menu;
+}
+.windows10-taskbar-right .taskbar-datetime span {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.3px;
+}
+.windows10-taskbar-right .taskbar-datetime span:first-child {
+    margin-top: 2px;
+    text-transform: uppercase;
+}
+.chrome-browser-active .windows10-taskbar-apps .taskbar-icon-chrome:before,
+.file-explore-active .windows10-taskbar-apps .taskbar-icon-folder-explore:before {
+    content: '';
+    position: absolute;
+    width: 86%;
+    height: 3px;
+    background: #327edb;
+    bottom: 0;
+    left: 7%;
+    transition: .2s;
+}
+.chrome-browser-active .windows10-taskbar-apps .taskbar-icon-chrome:hover:before,
+.windows10-taskbar-apps .taskbar-icon.active:before,
+.file-explore-active .windows10-taskbar-apps .taskbar-icon-folder-explore:hover:before {
+    width: 100%;
+    left: 0;
+}
+/* window_10_terminal */
+.window_10_terminal{
+    height: 100vh;
+    height: calc(100vh - 40px);
+    width: 100%;
+    position: absolute;
+    z-index: 999999;
+    background-color: #000;
+    display: none;
+}
+.window_10_terminal.active{
+    display: block;
+}
+.window10_terminal_topbar img{
+    height: 23px;
+    width: 23px;
+    display: inline-block;
+    margin-top: 3.5px;
+    margin-left: 8px;
+    margin-right: 5px;
+}
+.window10_terminal_topbar h1{
+    font-size: 13.4px;
+    color: #fff;
+    position: absolute;
+    line-height: 30px;
+    font-weight: 400;
+    display: inline-block;
+}
+/* WINDOWS 10 TASKBAR RIGHT TOPBAR */
+.windows10_topbar_right{
+    right: 0;
+    display: inline-block;
+    position: absolute;
+    z-index: 999999999;
+}
+.windows10_topbar_right div{
+    height: 30px;
+    width: 32px;
+    text-align: center;
+    color: #fff;
+    line-height: 30px;
+    display: inline-block;
+}
+.windows10_topbar_right div:hover{
+    background-color: rgba(255,255,255,.4);
+}
+.windows10_topbar_right .maximize_button::after{
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border: 1px solid #fff;
+    margin-top: 9px;
+    margin-left: -5px;
+}
+.windows10_topbar_right .close_button:hover{
+    background-color: rgb(212, 36, 36);
+}
+.windows10_topbar_right div i{
+    position: absolute;
+    line-height: 30px;
+    margin-left: -8px;
+}
+/* *************************************** */
+.window_10_terminal .window10_terminal_div{
+    width: 100%;
+    height: 100vh;
+    height: calc(100vh - 30px - 40px);
+    bottom: 0;
+    position: absolute;
+} 
+iframe{
+    width: 100%;
+    height: 100%;
+}
+/* window_10_bing */
+.window_10_bing{
+    height: 100vh;
+    height: calc(100vh - 40px);
+    width: 100%;
+    position: absolute;
+    z-index: 999999;
+    background-color: #000;
+    display: none;
+}
+.window_10_bing.active{
+    display: block;
+}
+.window10_bing_topbar img{
+    height: 23px;
+    width: 23px;
+    display: inline-block;
+    margin-top: 3.5px;
+    margin-left: 8px;
+    margin-right: 5px;
+}
+.window10_bing_topbar h1{
+    font-size: 13.4px;
+    color: #fff;
+    position: absolute;
+    line-height: 30px;
+    font-weight: 400;
+    display: inline-block;
+}
+/* WINDOWS 10 TASKBAR RIGHT TOPBAR */
+.windows10_topbar_right{
+    right: 0;
+    display: inline-block;
+    position: absolute;
+    z-index: 999999999;
+}
+.windows10_topbar_right div{
+    height: 30px;
+    width: 32px;
+    text-align: center;
+    color: #fff;
+    line-height: 30px;
+    display: inline-block;
+}
+.windows10_topbar_right div:hover{
+    background-color: rgba(255,255,255,.4);
+}
+.windows10_topbar_right .maximize_button::after{
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border: 1px solid #fff;
+    margin-top: 9px;
+    margin-left: -5px;
+}
+.windows10_topbar_right .close_button:hover{
+    background-color: rgb(212, 36, 36);
+}
+.windows10_topbar_right div i{
+    position: absolute;
+    line-height: 30px;
+    margin-left: -8px;
+    color: #fff;
+}
+/* *************************************** */
+.window_10_bing .window10_bing_div{
+    width: 100%;
+    height: 100vh;
+    height: calc(100vh - 30px - 40px);
+    bottom: 0;
+    position: absolute;
+}
+.window_10_bing iframe{
+    width: 100%;
+    height: 100%;
+}
+.bing-active .windows10-taskbar-apps .bing_button:before,
+.info-active .windows10-taskbar-apps .info_button:before,
+.hacker-typer-active .windows10-taskbar-apps .hackker_typer_dot_net_button:before,
+.snipping_tool-active .windows10-taskbar-apps .taskbar_icon_snipping_tool:before
+{
+    content: '';
+    position: absolute;
+    width: 86%;
+    height: 3px;
+    background: #327edb;
+    bottom: 0;
+    left: 7%;
+    transition: .2s;
+}
+.bing-active .windows10-taskbar-apps .bing_button:hover:before,
+.info-active .windows10-taskbar-apps .info_button:hover:before,
+.snipping_tool-active .windows10-taskbar-apps .taskbar_icon_snipping_tool:hover:before,
+.hacker-typer-active .windows10-taskbar-apps .hackker_typer_dot_net_button:hover:before {
+    width: 100%;
+    left: 0;
+}
+@media (max-width: 900px){
+     .windows10-start-area{
+         width: 320px;
+         height: 550px;
+     }
+     .windows10-start-content-right{
+         display: none;
+     }
+     .windows10-taskbar-search-app{
+         width: 48px;
+         text-align: center;
+         line-height: 40px;
+     }
+     .windows10-taskbar-search-app:hover{
+         background-color: rgba(255, 255, 255, .9);
+     }
+     .windows10-taskbar-search-app i{
+         left: 12px;
+         top: 11px;
+         font-size: 20px;
+     }
+     .windows10-taskbar-search-app input{
+         display: none;
+     }
+}
+/* About windows */
+.windows_22_about{
+    height: 70vh;
+    margin-top: 15vh;
+    width: 45vw;
+    background-color: #e4e4e4;
+    backdrop-filter: 90px;
+    border-radius: 9px;
+    margin-left: 27.5vw;
+    margin-top: calc(15vh - 40px);
+    position: absolute;
+    z-index: 99999;
+    display: none;
+}
+.windows_22_about.active{
+    display: block;
+}
+.windows_22_topbar{
+    height: 30px;
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: rgb(238, 238, 238);
+}
+.windows_22_topbar h1{
+    line-height: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    margin-left: 10px;
+    line-height: 30px;
+}
+.windows22_bottom h2 span{
+    color: rgb(91, 137, 238);
+    font-weight: 500;
+}
+.windows22_bottom h2{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 12px;
+    margin-bottom: 7px;
+    font-weight: 400;
+    margin-left: 30px;
+}
+.windows22_bottom h1{
+    font-size: 13px;
+    margin-bottom: 3px;
+    font-weight: 400;
+    margin-left: 30px;
+    font-weight: 600;
+    color: #000;
+}
+.windows22_bottom h1 span{
+    margin-left: 1vw;
+    color: #1a1a1a;
+    font-weight: 400;
+}
+.windows22_bottom button{
+    height: 30px;
+    width: 114px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-weight: 100;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    letter-spacing: .5px;
+    color: rgb(66, 66, 66);
+    border-radius: 4px;
+    bottom: 0;
+    right: 0;
+    margin-right: 11vw;
+    margin-bottom: 6vh;
+    position: absolute;
+}
+.windows22_bottom button:hover{
+    border: 2px solid #fff;
+}
+.windows22_bottom button{
+    margin-top: 0px;
+    margin-right: 24px;
+    float: right;
+}
+.windows22_bottom img{
+    height: 18vh;
+    width: 18vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 9vh;
+    margin-right: 7vw;
+}
+/* Snipping Tool */
+.snipping_tool{
+    width: 400px;
+    z-index: 9;
+    height: 165px;
+    background-color: #F0F0F0;
+    position: absolute;
+    left: 30vw;
+    top: 40vh;
+    display: none;
+}
+.snipping_tool.active{
+    display: block;
+}
+.snipping_tool .window10_bing_topbar h1{
+    color: #000;
+}
+.snipping_tool .window10_bing_topbar{
+    background-color: #fff;
+}
+.snipping_tool .windows10_topbar_right div:hover{
+    background-color: #f1f1f1;
+}
+.snipping_tool .windows10_topbar_right i{
+    color: #000;
+}
+.snipping_tool .windows10_topbar_right .maximize_button::after{
+    border: 1px solid rgb(201, 201, 201);
+}
+.snipping_tool .windows10_topbar_right .minimize_button i{
+    color: black;
+}
+.snipping_tool .windows10_topbar_right .close_button:hover{
+    background-color: #e81123;
+}
+.snipping_tool .windows10_topbar_right .close_button i:hover{
+    color: #fff;
+}
+.snipping_tool .snipping_tool_topbar2{
+    height: 40px;
+    background-color: #F0F0F0;
+}
+.snipping_tool .snipping_tool_topbar2 .new_stool{
+    height: 40px;
+    width: 65px;
+    float: left;
+    padding-right: 4px;
+    cursor: pointer;
+    border: none;
+    line-height: 40px;
+    opacity: none;
+}
+.snipping_tool .snipping_tool_topbar2 .new_stool img{
+    height: 23px;
+    width: 23px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 1px;
+    position: relative;
+}
+.snipping_tool .snipping_tool_topbar2 .new_stool h3{
+    font-size: 14px;
+    line-height: 40px;
+    font-weight: 400;
+    display: inline-block;
+    float: right;
+    margin-right: 4px;
+}
+.snipping_tool_topbar2 .stool3{
+    float: right;
+    cursor: not-allowed;
+    opacity: .7;
+}
+.snipping_tool .snipping_tool_topbar2 .new_stool:hover{
+    background-color: #C0DCF3;
+}
+.preview_snipping_tool{
+    height: 100vh;
+    width: 100vw;
+    background-color: pink;
+    position: absolute;
+}
+
+
+
+
+
+
+video, canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+ }
